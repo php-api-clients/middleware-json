@@ -1,36 +1,17 @@
-# API Client Foundation for PHP 7.x
+# JSON tools for API Clients for PHP 7.x
 
-[![Build Status](https://travis-ci.org/php-api-clients/foundation.svg?branch=master)](https://travis-ci.org/php-api-clients/foundation)
-[![Latest Stable Version](https://poser.pugx.org/api-clients/foundation/v/stable.png)](https://packagist.org/packages/api-clients/foundation)
-[![Total Downloads](https://poser.pugx.org/api-clients/foundation/downloads.png)](https://packagist.org/packages/api-clients/foundation/stats)
-[![Code Coverage](https://scrutinizer-ci.com/g/php-api-clients/foundation/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-api-clients/foundation/?branch=master)
-[![License](https://poser.pugx.org/api-clients/foundation/license.png)](https://packagist.org/packages/api-clients/foundation)
-[![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/foundation/badge.svg)](https://appveyor-ci.org/php-api-clients/foundation)
-
-# Middleware
-
-Middlewares are passed into the client with the options argument. In this example the [`api-clients/middleware-delay`](https://github.com/php-api-clients/middleware-delay) is used. Adding middlewares to the client is simple, add an array to `$options` with `Options::MIDDLEWARE` as index cosisting of middleware class names. Optionally you can pass options for the middleware through the `$options` array. Simply add a new array inside the array with the middlware class name as index and pass the desired options into it.
-
-```php
-$options = [
-    Options::DEFAULT_REQUEST_OPTIONS => [
-        \ApiClients\Middleware\Delay\DelayMiddleware::class => [
-            \ApiClients\Middleware\Delay\Options::DELAY => 3,
-        ],
-    ],
-    Options::MIDDLEWARE => [
-        \ApiClients\Middleware\Delay\DelayMiddleware::class,
-    ],
-];
-
-$client = new Client($loop, $container, $browser, $options);
-```
+[![Build Status](https://travis-ci.org/php-api-clients/json.svg?branch=master)](https://travis-ci.org/php-api-clients/json)
+[![Latest Stable Version](https://poser.pugx.org/api-clients/json/v/stable.png)](https://packagist.org/packages/api-clients/json)
+[![Total Downloads](https://poser.pugx.org/api-clients/json/downloads.png)](https://packagist.org/packages/api-clients/json/stats)
+[![Code Coverage](https://scrutinizer-ci.com/g/php-api-clients/json/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-api-clients/json/?branch=master)
+[![License](https://poser.pugx.org/api-clients/json/license.png)](https://packagist.org/packages/api-clients/json)
+[![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/json/badge.svg)](https://appveyor-ci.org/php-api-clients/json)
 
 # License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Cees-Jan Kiewiet
+Copyright (c) 2017 Cees-Jan Kiewiet
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
