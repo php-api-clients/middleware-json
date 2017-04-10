@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ApiClients\Tests\Tools\JSON;
+namespace ApiClients\Tests\Middleware\JSON;
 
 use ApiClients\Tools\JSON\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;

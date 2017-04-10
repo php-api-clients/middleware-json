@@ -1,11 +1,11 @@
 # JSON tools for API Clients for PHP 7.x
 
-[![Build Status](https://travis-ci.org/php-api-clients/json.svg?branch=master)](https://travis-ci.org/php-api-clients/json)
-[![Latest Stable Version](https://poser.pugx.org/api-clients/json/v/stable.png)](https://packagist.org/packages/api-clients/json)
-[![Total Downloads](https://poser.pugx.org/api-clients/json/downloads.png)](https://packagist.org/packages/api-clients/json/stats)
-[![Code Coverage](https://scrutinizer-ci.com/g/php-api-clients/json/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-api-clients/json/?branch=master)
-[![License](https://poser.pugx.org/api-clients/json/license.png)](https://packagist.org/packages/api-clients/json)
-[![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/json/badge.svg)](https://appveyor-ci.org/php-api-clients/json)
+[![Build Status](https://travis-ci.org/php-api-clients/middleware-json.svg?branch=master)](https://travis-ci.org/php-api-clients/middleware-json)
+[![Latest Stable Version](https://poser.pugx.org/api-clients/middleware-json/v/stable.png)](https://packagist.org/packages/api-clients/middleware-json)
+[![Total Downloads](https://poser.pugx.org/api-clients/middleware-json/downloads.png)](https://packagist.org/packages/api-clients/middleware-json/stats)
+[![Code Coverage](https://scrutinizer-ci.com/g/php-api-clients/middleware-json/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-api-clients/middleware-json/?branch=master)
+[![License](https://poser.pugx.org/api-clients/middleware-json/license.png)](https://packagist.org/packages/api-clients/middleware-json)
+[![PHP 7 ready](http://php7ready.timesplinter.ch/php-api-clients/middleware-json/badge.svg)](https://appveyor-ci.org/php-api-clients/middleware-json)
 
 # License
 

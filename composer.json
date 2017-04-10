@@ -1,5 +1,5 @@
 {
-  "name": "api-clients/json",
+  "name": "api-clients/middleware-json",
   "license": "MIT",
   "authors": [
     {
@@ -9,9 +9,9 @@
   ],
   "require": {
     "php": "^7.0",
+    "api-clients/json": "dev-master",
     "api-clients/middleware": "^2.0",
     "clue/buzz-react": "^1.1",
-    "daverandom/exceptional-json": "^1.0.1",
     "psr/http-message": "^1.0",
     "ringcentral/psr7": "^1.2",
     "wyrihaximus/ticking-promise": "^1.6"
@@ -21,12 +21,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ApiClients\\Tools\\JSON\\": "src/"
+      "ApiClients\\Middleware\\JSON\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ApiClients\\Tests\\Tools\\JSON\\": "tests/"
+      "ApiClients\\Tests\\Middleware\\JSON\\": "tests/"
     }
   },
   "config": {

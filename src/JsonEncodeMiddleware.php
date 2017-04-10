@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Tools\JSON\Middleware;
+namespace ApiClients\Middleware\JSON;
 
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
