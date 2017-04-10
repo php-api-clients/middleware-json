@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Tests\Foundation\Transport\Middleware;
+namespace ApiClients\Tests\Tools\JSON\Middleware;
 
-use ApiClients\Foundation\Transport\JsonStream;
-use ApiClients\Foundation\Transport\Middleware\JsonDecodeMiddleware;
-use ApiClients\Foundation\Transport\Service\JsonDecodeService;
+use ApiClients\Tools\JSON\JsonStream;
+use ApiClients\Tools\JSON\Middleware\JsonDecodeMiddleware;
+use ApiClients\Tools\JSON\Service\JsonDecodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Clue\React\Buzz\Message\ReadableBodyStream;
 use React\EventLoop\Factory;

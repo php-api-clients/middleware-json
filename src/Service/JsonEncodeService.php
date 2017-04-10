@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Foundation\Transport\Service;
+namespace ApiClients\Tools\JSON\Service;
 
 use ApiClients\Foundation\Service\ServiceInterface;
 use React\EventLoop\LoopInterface;
@@ -9,7 +9,7 @@ use function ExceptionalJSON\encode;
 use function React\Promise\resolve;
 use function WyriHaximus\React\futureFunctionPromise;
 
-final class JsonEncodeService implements ServiceInterface
+final class JsonEncodeService
 {
     /**
      * @var LoopInterface

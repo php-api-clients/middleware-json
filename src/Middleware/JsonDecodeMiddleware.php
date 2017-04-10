@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Foundation\Transport\Middleware;
+namespace ApiClients\Tools\JSON\Middleware;
 
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PreTrait;
 use ApiClients\Foundation\Middleware\Priority;
-use ApiClients\Foundation\Transport\JsonStream;
-use ApiClients\Foundation\Transport\Service\JsonDecodeService as JsonDecodeService;
+use ApiClients\Tools\JSON\JsonStream;
+use ApiClients\Tools\JSON\Service\JsonDecodeService as JsonDecodeService;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
 use React\Stream\ReadableStreamInterface;

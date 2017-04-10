@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Foundation\Transport\Service;
+namespace ApiClients\Tools\JSON\Service;
 
 use ApiClients\Foundation\Service\ServiceInterface;
 use React\EventLoop\LoopInterface;
@@ -8,7 +8,7 @@ use React\Promise\CancellablePromiseInterface;
 use function ExceptionalJSON\decode;
 use function WyriHaximus\React\futureFunctionPromise;
 
-final class JsonDecodeService implements ServiceInterface
+final class JsonDecodeService
 {
     /**
      * @var LoopInterface

@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Tests\Foundation\Transport\Middleware;
+namespace ApiClients\Tests\Tools\JSON\Middleware;
 
-use ApiClients\Foundation\Transport\JsonStream;
-use ApiClients\Foundation\Transport\Middleware\JsonEncodeMiddleware;
-use ApiClients\Foundation\Transport\Service\JsonEncodeService;
+use ApiClients\Tools\JSON\JsonStream;
+use ApiClients\Tools\JSON\Middleware\JsonEncodeMiddleware;
+use ApiClients\Tools\JSON\Service\JsonEncodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\BufferStream;
