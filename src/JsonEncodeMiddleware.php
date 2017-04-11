@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Middleware\JSON;
+namespace ApiClients\Middleware\Json;
 
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
 use ApiClients\Foundation\Middleware\Priority;
-use ApiClients\Tools\JSON\JsonEncodeService;
+use ApiClients\Tools\Json\JsonEncodeService;
 use Psr\Http\Message\RequestInterface;
 use React\Promise\CancellablePromiseInterface;
 use RingCentral\Psr7\BufferStream;

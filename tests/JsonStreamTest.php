@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace ApiClients\Tests\Middleware\JSON;
+namespace ApiClients\Tests\Middleware\Json;
 
-use ApiClients\Middleware\JSON\JsonStream;
+use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\TestUtilities\TestCase;
 use RuntimeException;
 

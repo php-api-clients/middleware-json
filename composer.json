@@ -21,12 +21,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ApiClients\\Middleware\\JSON\\": "src/"
+      "ApiClients\\Middleware\\Json\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ApiClients\\Tests\\Middleware\\JSON\\": "tests/"
+      "ApiClients\\Tests\\Middleware\\Json\\": "tests/"
     }
   },
   "config": {

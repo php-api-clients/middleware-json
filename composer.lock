@@ -39,7 +39,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "ApiClients\\Tools\\JSON\\": "src/"
+                    "ApiClients\\Tools\\Json\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",

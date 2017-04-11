@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Middleware\JSON;
+namespace ApiClients\Middleware\Json;
 
 use Psr\Http\Message\StreamInterface;
 use RuntimeException;
