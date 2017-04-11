@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/json.git",
-                "reference": "a55f054149ac4d39e21fcd00fe2136314cdf9326"
+                "reference": "bfb702c73a89a21be593fba3daccc367a50d23dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/json/zipball/a55f054149ac4d39e21fcd00fe2136314cdf9326",
-                "reference": "a55f054149ac4d39e21fcd00fe2136314cdf9326",
+                "url": "https://api.github.com/repos/php-api-clients/json/zipball/bfb702c73a89a21be593fba3daccc367a50d23dd",
+                "reference": "bfb702c73a89a21be593fba3daccc367a50d23dd",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-04-11 06:09:13"
+            "time": "2017-04-11 15:02:25"
         },
         {
             "name": "api-clients/middleware",
