@@ -50,7 +50,7 @@ class JsonDecodeMiddleware implements MiddlewareInterface
             return resolve($response);
         }
 
-        return $this->jsonDecodeService->handle((string)$response->getBody())->then(function ($json) use ($response) {
+        return $this->jsonDecodeService->decode((string)$response->getBody())->then(function ($json) use ($response) {
             $body = new JsonStream($json);
             return resolve($response->withBody($body));
         });
