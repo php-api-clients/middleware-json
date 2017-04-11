@@ -12,21 +12,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/json.git",
-                "reference": "35712ee3f2f6d89b7154837055340d7ce0584759"
+                "reference": "403e486b7df8a0f5cdc19f5b9f773bccff684b4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/json/zipball/35712ee3f2f6d89b7154837055340d7ce0584759",
-                "reference": "35712ee3f2f6d89b7154837055340d7ce0584759",
+                "url": "https://api.github.com/repos/php-api-clients/json/zipball/403e486b7df8a0f5cdc19f5b9f773bccff684b4f",
+                "reference": "403e486b7df8a0f5cdc19f5b9f773bccff684b4f",
                 "shasum": ""
             },
             "require": {
-                "api-clients/middleware": "^2.0",
-                "clue/buzz-react": "^1.1",
                 "daverandom/exceptional-json": "^1.0.1",
                 "php": "^7.0",
-                "psr/http-message": "^1.0",
-                "ringcentral/psr7": "^1.2",
                 "wyrihaximus/ticking-promise": "^1.6"
             },
             "require-dev": {
@@ -56,7 +52,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-04-10 19:54:52"
+            "time": "2017-04-11 05:54:33"
         },
         {
             "name": "api-clients/middleware",
@@ -620,16 +616,16 @@
         },
         {
             "name": "react/socket",
-            "version": "v0.7.0",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/socket.git",
-                "reference": "84db06fa80910b5eea0af893f38bbeed1aed3e69"
+                "reference": "57e3262b4b6098f7343cf16df393099dad5d5f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/socket/zipball/84db06fa80910b5eea0af893f38bbeed1aed3e69",
-                "reference": "84db06fa80910b5eea0af893f38bbeed1aed3e69",
+                "url": "https://api.github.com/repos/reactphp/socket/zipball/57e3262b4b6098f7343cf16df393099dad5d5f11",
+                "reference": "57e3262b4b6098f7343cf16df393099dad5d5f11",
                 "shasum": ""
             },
             "require": {
@@ -664,7 +660,7 @@
                 "reactphp",
                 "stream"
             ],
-            "time": "2017-04-10T12:08:10+00:00"
+            "time": "2017-04-10T20:52:43+00:00"
         },
         {
             "name": "react/socket-client",

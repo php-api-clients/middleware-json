@@ -2,9 +2,9 @@
 
 namespace ApiClients\Tests\Middleware\JSON;
 
-use ApiClients\Tools\JSON\JsonStream;
-use ApiClients\Tools\JSON\Middleware\JsonEncodeMiddleware;
-use ApiClients\Tools\JSON\Service\JsonEncodeService;
+use ApiClients\Middleware\JSON\JsonStream;
+use ApiClients\Middleware\JSON\JsonEncodeMiddleware;
+use ApiClients\Tools\JSON\JsonEncodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\BufferStream;

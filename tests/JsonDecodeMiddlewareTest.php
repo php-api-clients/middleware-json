@@ -2,9 +2,9 @@
 
 namespace ApiClients\Tests\Middleware\JSON;
 
-use ApiClients\Tools\JSON\JsonStream;
-use ApiClients\Tools\JSON\Middleware\JsonDecodeMiddleware;
-use ApiClients\Tools\JSON\Service\JsonDecodeService;
+use ApiClients\Middleware\JSON\JsonStream;
+use ApiClients\Middleware\JSON\JsonDecodeMiddleware;
+use ApiClients\Tools\JSON\JsonDecodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Clue\React\Buzz\Message\ReadableBodyStream;
 use React\EventLoop\Factory;
