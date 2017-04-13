@@ -30,14 +30,9 @@
     }
   },
   "config": {
-    "sort-packages": true
-  },
-  "extra": {
-    "api-clients": {
-      "command-bus": {
-        "path": "src/CommandBus",
-        "namespace": "ApiClients\\Foundation\\Transport\\CommandBus"
-      }
+    "sort-packages": true,
+    "platform": {
+      "php": "7.0"
     }
   },
   "scripts": {
