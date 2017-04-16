@@ -9,7 +9,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "api-clients/json": "dev-master",
+    "api-clients/json": "^1.0",
     "api-clients/middleware": "^2.0",
     "clue/buzz-react": "^1.1",
     "psr/http-message": "^1.0",

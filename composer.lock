@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e1146532f49d55d7a568fc9a405a483",
+    "content-hash": "7db0eccf7ecc306845f8831c89959986",
     "packages": [
         {
             "name": "api-clients/json",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/json.git",
-                "reference": "bfb702c73a89a21be593fba3daccc367a50d23dd"
+                "reference": "38d40981b2bef5429abb32b116b299bc8aa08ad4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/json/zipball/bfb702c73a89a21be593fba3daccc367a50d23dd",
-                "reference": "bfb702c73a89a21be593fba3daccc367a50d23dd",
+                "url": "https://api.github.com/repos/php-api-clients/json/zipball/38d40981b2bef5429abb32b116b299bc8aa08ad4",
+                "reference": "38d40981b2bef5429abb32b116b299bc8aa08ad4",
                 "shasum": ""
             },
             "require": {
@@ -29,14 +29,6 @@
                 "api-clients/test-utilities": "^3.0.1"
             },
             "type": "library",
-            "extra": {
-                "api-clients": {
-                    "command-bus": {
-                        "path": "src/CommandBus",
-                        "namespace": "ApiClients\\Foundation\\Transport\\CommandBus"
-                    }
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "ApiClients\\Tools\\Json\\": "src/"
@@ -52,7 +44,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "time": "2017-04-11 15:02:25"
+            "time": "2017-04-16T19:26:22+00:00"
         },
         {
             "name": "api-clients/middleware",
@@ -2473,9 +2465,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "api-clients/json": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
