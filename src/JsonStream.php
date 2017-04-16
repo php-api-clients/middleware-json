@@ -3,7 +3,7 @@
 namespace ApiClients\Middleware\Json;
 
 use Psr\Http\Message\StreamInterface;
-use RuntimeException;
+use RingCentral\Psr7\BufferStream;
 
 class JsonStream implements StreamInterface
 {
@@ -12,9 +12,17 @@ class JsonStream implements StreamInterface
      */
     private $json = [];
 
+    /**
+     * @var StreamInterface
+     */
+    private $bufferStream;
+
     public function __construct(array $json)
     {
         $this->json = $json;
+        $jsonString = json_encode($json);
+        $this->bufferStream = new BufferStream(strlen($jsonString));
+        $this->bufferStream->write($jsonString);
     }
 
     /**
@@ -32,7 +40,7 @@ class JsonStream implements StreamInterface
 
     public function getContents()
     {
-        return '';
+        return $this->bufferStream->getContents();
     }
 
     public function close()
@@ -45,41 +53,42 @@ class JsonStream implements StreamInterface
 
     public function getSize()
     {
-        return count($this->json);
+        return $this->bufferStream->getSize();
     }
 
     public function isReadable()
     {
-        return true;
+        return $this->bufferStream->isReadable();
     }
 
     public function isWritable()
     {
-        return false;
+        return $this->bufferStream->isWritable();
     }
 
     public function isSeekable()
     {
-        return false;
+        return $this->bufferStream->isSeekable();
     }
 
     public function rewind()
     {
+        return $this->bufferStream->rewind();
     }
 
     public function seek($offset, $whence = SEEK_SET)
     {
-        throw new RuntimeException('Cannot seek a BufferStream');
+        return $this->bufferStream->seek($offset, $whence);
     }
 
     public function eof()
     {
-        return true;
+        return $this->bufferStream->eof();
     }
 
     public function tell()
     {
-        throw new RuntimeException('Cannot determine the position of a BufferStream');
+        return $this->bufferStream->tell();
     }
 
     /**
@@ -87,7 +96,7 @@ class JsonStream implements StreamInterface
      */
     public function read($length)
     {
-        throw new RuntimeException('Cannot read from a JsonStream');
+        return $this->bufferStream->read($length);
     }
 
     /**
@@ -95,11 +104,11 @@ class JsonStream implements StreamInterface
      */
     public function write($string)
     {
-        throw new RuntimeException('Cannot write to a JsonStream');
+        return $this->bufferStream->write($string);
     }
 
     public function getMetadata($key = null)
     {
-        return [];
+        return $this->bufferStream->getMetadata($key);
     }
 }
