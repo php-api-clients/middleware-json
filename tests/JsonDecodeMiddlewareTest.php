@@ -22,7 +22,7 @@ class JsonDecodeMiddlewareTest extends TestCase
         $response = new Response(200, [], '[]');
 
         $body = await(
-            $middleware->post($response),
+            $middleware->post($response, 'abc'),
             $loop
         )->getBody();
 
@@ -44,17 +44,9 @@ class JsonDecodeMiddlewareTest extends TestCase
         self::assertSame(
             $response,
             await(
-                $middleware->post($response),
+                $middleware->post($response, 'abc'),
                 $loop
             )
         );
-    }
-
-    public function testPriority()
-    {
-        $loop = Factory::create();
-        $service = new JsonDecodeService($loop);
-        $middleware = new JsonDecodeMiddleware($service);
-        self::assertSame(1000, $middleware->priority());
     }
 }

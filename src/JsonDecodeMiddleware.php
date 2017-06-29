@@ -2,6 +2,7 @@
 
 namespace ApiClients\Middleware\Json;
 
+use ApiClients\Foundation\Middleware\Annotation\First;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PreTrait;
@@ -32,20 +33,17 @@ class JsonDecodeMiddleware implements MiddlewareInterface
     }
 
     /**
-     * @return int
-     */
-    public function priority(): int
-    {
-        return Priority::FIRST;
-    }
-
-    /**
      * @param ResponseInterface $response
      * @param array $options
      * @return CancellablePromiseInterface
+     *
+     * @First()
      */
-    public function post(ResponseInterface $response, array $options = []): CancellablePromiseInterface
-    {
+    public function post(
+        ResponseInterface $response,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         if ($response->getBody() instanceof ReadableStreamInterface) {
             return resolve($response);
         }

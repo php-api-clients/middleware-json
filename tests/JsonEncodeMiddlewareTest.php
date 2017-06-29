@@ -21,7 +21,7 @@ class JsonEncodeMiddlewareTest extends TestCase
         $stream = new JsonStream([]);
         $request = new Request('GET', 'https://example.com', [], $stream);
 
-        $modifiedRequest = await($middleware->pre($request), $loop);
+        $modifiedRequest = await($middleware->pre($request, 'abc'), $loop);
         self::assertSame(
             '[]',
             (string) $modifiedRequest->getBody()
@@ -42,17 +42,9 @@ class JsonEncodeMiddlewareTest extends TestCase
         self::assertSame(
             $request,
             await(
-                $middleware->pre($request),
+                $middleware->pre($request, 'abc'),
                 $loop
             )
         );
-    }
-
-    public function testPriority()
-    {
-        $loop = Factory::create();
-        $service = new JsonEncodeService($loop);
-        $middleware = new JsonEncodeMiddleware($service);
-        self::assertSame(1000, $middleware->priority());
     }
 }

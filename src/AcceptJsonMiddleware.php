@@ -14,15 +14,17 @@ class AcceptJsonMiddleware implements MiddlewareInterface
 {
     use PostTrait;
     use ErrorTrait;
-    use DefaultPriorityTrait;
 
     /**
      * @param RequestInterface $request
      * @param array $options
      * @return CancellablePromiseInterface
      */
-    public function pre(RequestInterface $request, array $options = []): CancellablePromiseInterface
-    {
+    public function pre(
+        RequestInterface $request,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         return resolve($request->withAddedHeader('Accept', 'application/json'));
     }
 }
