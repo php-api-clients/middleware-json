@@ -2,6 +2,7 @@
 
 namespace ApiClients\Middleware\Json;
 
+use ApiClients\Foundation\Middleware\Annotation\First;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
@@ -31,20 +32,17 @@ class JsonEncodeMiddleware implements MiddlewareInterface
     }
 
     /**
-     * @return int
-     */
-    public function priority(): int
-    {
-        return Priority::FIRST;
-    }
-
-    /**
      * @param RequestInterface $request
      * @param array $options
      * @return CancellablePromiseInterface
+     *
+     * @First()
      */
-    public function pre(RequestInterface $request, array $options = []): CancellablePromiseInterface
-    {
+    public function pre(
+        RequestInterface $request,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         if (!($request->getBody() instanceof JsonStream)) {
             return resolve($request);
         }

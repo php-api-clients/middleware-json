@@ -15,7 +15,7 @@ class AcceptJsonMiddlewareTest extends TestCase
         $middleware = new AcceptJsonMiddleware();
         $request = new Request('GET', 'https://example.com', [], '');
 
-        $modifiedRequest = await($middleware->pre($request), Factory::create());
+        $modifiedRequest = await($middleware->pre($request, 'abc'), Factory::create());
         self::assertSame(
             [
                 'Host' => ['example.com'],
