@@ -2,11 +2,10 @@
 
 namespace ApiClients\Middleware\Json;
 
-use ApiClients\Foundation\Middleware\Annotation\First;
+use ApiClients\Foundation\Middleware\Annotation\Third;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
-use ApiClients\Foundation\Middleware\Priority;
 use ApiClients\Tools\Json\JsonEncodeService;
 use Psr\Http\Message\RequestInterface;
 use React\Promise\CancellablePromiseInterface;
@@ -36,7 +35,7 @@ class JsonEncodeMiddleware implements MiddlewareInterface
      * @param array $options
      * @return CancellablePromiseInterface
      *
-     * @First()
+     * @Third()
      */
     public function pre(
         RequestInterface $request,

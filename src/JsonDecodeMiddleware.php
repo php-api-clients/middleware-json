@@ -2,11 +2,10 @@
 
 namespace ApiClients\Middleware\Json;
 
-use ApiClients\Foundation\Middleware\Annotation\First;
+use ApiClients\Foundation\Middleware\Annotation\ThirdLast;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PreTrait;
-use ApiClients\Foundation\Middleware\Priority;
 use ApiClients\Tools\Json\JsonDecodeService;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
@@ -37,7 +36,7 @@ class JsonDecodeMiddleware implements MiddlewareInterface
      * @param array $options
      * @return CancellablePromiseInterface
      *
-     * @First()
+     * @ThirdLast()
      */
     public function post(
         ResponseInterface $response,
