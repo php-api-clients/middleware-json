@@ -7,6 +7,7 @@ use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PreTrait;
 use ApiClients\Tools\Json\JsonDecodeService;
+use GuzzleHttp\Psr7\BufferStream;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
 use React\Stream\ReadableStreamInterface;
@@ -47,7 +48,14 @@ class JsonDecodeMiddleware implements MiddlewareInterface
             return resolve($response);
         }
 
-        return $this->jsonDecodeService->decode((string)$response->getBody())->then(function ($json) use ($response) {
+        $body = (string)$response->getBody();
+        if ($body === '') {
+            $stream = new BufferStream(0);
+            $stream->write($body);
+            return resolve($response->withBody($stream));
+        }
+
+        return $this->jsonDecodeService->decode($body)->then(function ($json) use ($response) {
             $body = new JsonStream($json);
             return resolve($response->withBody($body));
         });

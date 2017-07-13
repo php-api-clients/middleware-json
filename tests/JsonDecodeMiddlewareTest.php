@@ -49,4 +49,20 @@ class JsonDecodeMiddlewareTest extends TestCase
             )
         );
     }
+
+    public function testPostEmpty()
+    {
+        $loop = Factory::create();
+        $service = new JsonDecodeService($loop);
+        $middleware = new JsonDecodeMiddleware($service);
+        $response = new Response(200, [], '');
+
+        self::assertSame(
+            '',
+            (string)await(
+                $middleware->post($response, 'abc'),
+                $loop
+            )->getBody()
+        );
+    }
 }
