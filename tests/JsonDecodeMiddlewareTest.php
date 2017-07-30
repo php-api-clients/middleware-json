@@ -4,6 +4,7 @@ namespace ApiClients\Tests\Middleware\Json;
 
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Middleware\Json\JsonDecodeMiddleware;
+use ApiClients\Middleware\Json\Options;
 use ApiClients\Tools\Json\JsonDecodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Clue\React\Buzz\Message\ReadableBodyStream;
@@ -19,10 +20,82 @@ class JsonDecodeMiddlewareTest extends TestCase
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
         $middleware = new JsonDecodeMiddleware($service);
-        $response = new Response(200, [], '[]');
+        $response = new Response(200, ['Content-Type' => 'application/json'], '[]');
 
         $body = await(
             $middleware->post($response, 'abc'),
+            $loop
+        )->getBody();
+
+        self::assertInstanceOf(JsonStream::class, $body);
+
+        self::assertSame(
+            [],
+            $body->getJson()
+        );
+    }
+
+    public function testPostNoContentType()
+    {
+        $loop = Factory::create();
+        $service = new JsonDecodeService($loop);
+        $middleware = new JsonDecodeMiddleware($service);
+        $response = new Response(200, [], '[]');
+
+        self::assertSame(
+            $response,
+            await(
+                $middleware->post($response, 'abc'),
+                $loop
+            )
+        );
+    }
+
+    public function testPostNoContentTypeCheck()
+    {
+        $loop = Factory::create();
+        $service = new JsonDecodeService($loop);
+        $middleware = new JsonDecodeMiddleware($service);
+        $response = new Response(200, [], '[]');
+
+        $body = await(
+            $middleware->post(
+                $response,
+                'abc',
+                [
+                    JsonDecodeMiddleware::class => [
+                        Options::NO_CONTENT_TYPE_CHECK => true,
+                    ],
+                ]
+            ),
+            $loop
+        )->getBody();
+
+        self::assertInstanceOf(JsonStream::class, $body);
+
+        self::assertSame(
+            [],
+            $body->getJson()
+        );
+    }
+
+    public function testPostCustomTYpe()
+    {
+        $loop = Factory::create();
+        $service = new JsonDecodeService($loop);
+        $middleware = new JsonDecodeMiddleware($service);
+        $response = new Response(200, ['Content-Type' => 'custom/type'], '[]');
+
+        $body = await(
+            $middleware->post(
+                $response,
+                'abc',
+                [
+                    JsonDecodeMiddleware::class => [
+                        Options::CONTENT_TYPE => 'custom/type',
+                    ],
+                ]
+            ),
             $loop
         )->getBody();
 
