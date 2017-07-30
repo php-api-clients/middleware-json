@@ -48,6 +48,16 @@ class JsonDecodeMiddleware implements MiddlewareInterface
             return resolve($response);
         }
 
+        if (!isset($options[self::class]) &&
+            $response->getHeaderLine('Content-Type') !== 'application/json') {
+            return resolve($response);
+        }
+
+        if (isset($options[self::class][Options::CONTENT_TYPE]) &&
+            $response->getHeaderLine('Content-Type') !== $options[self::class][Options::CONTENT_TYPE]) {
+            return resolve($response);
+        }
+
         $body = (string)$response->getBody();
         if ($body === '') {
             $stream = new BufferStream(0);
