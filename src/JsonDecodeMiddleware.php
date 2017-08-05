@@ -49,7 +49,7 @@ class JsonDecodeMiddleware implements MiddlewareInterface
         }
 
         if (!isset($options[self::class]) &&
-            $response->getHeaderLine('Content-Type') !== 'application/json') {
+            strpos($response->getHeaderLine('Content-Type'), 'application/json') !== 0) {
             return resolve($response);
         }
 

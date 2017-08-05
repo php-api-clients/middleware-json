@@ -15,12 +15,21 @@ use function Clue\React\Block\await;
 
 class JsonDecodeMiddlewareTest extends TestCase
 {
-    public function testPost()
+    public function provideValidJsonContentTypes()
+    {
+        yield ['application/json'];
+        yield ['application/json; charset=utf-8'];
+    }
+
+    /**
+     * @dataProvider provideValidJsonContentTypes
+     */
+    public function testPost(string $contentType)
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
         $middleware = new JsonDecodeMiddleware($service);
-        $response = new Response(200, ['Content-Type' => 'application/json'], '[]');
+        $response = new Response(200, ['Content-Type' => $contentType], '[]');
 
         $body = await(
             $middleware->post($response, 'abc'),
