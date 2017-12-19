@@ -2,10 +2,11 @@
 
 namespace ApiClients\Middleware\Json;
 
+use ApiClients\Foundation\Transport\ParsedContentsInterface;
 use Psr\Http\Message\StreamInterface;
 use RingCentral\Psr7\BufferStream;
 
-class JsonStream implements StreamInterface
+class JsonStream implements StreamInterface, ParsedContentsInterface
 {
     /**
      * @var array
@@ -28,7 +29,7 @@ class JsonStream implements StreamInterface
     /**
      * @return array
      */
-    public function getJson()
+    public function getParsedContents(): array
     {
         return $this->json;
     }
