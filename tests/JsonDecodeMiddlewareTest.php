@@ -40,7 +40,7 @@ class JsonDecodeMiddlewareTest extends TestCase
 
         self::assertSame(
             [],
-            $body->getJson()
+            $body->getParsedContents()
         );
     }
 
@@ -84,7 +84,7 @@ class JsonDecodeMiddlewareTest extends TestCase
 
         self::assertSame(
             [],
-            $body->getJson()
+            $body->getParsedContents()
         );
     }
 
@@ -112,7 +112,7 @@ class JsonDecodeMiddlewareTest extends TestCase
 
         self::assertSame(
             [],
-            $body->getJson()
+            $body->getParsedContents()
         );
     }
 

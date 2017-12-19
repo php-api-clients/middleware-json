@@ -11,7 +11,7 @@ class JsonStreamTest extends TestCase
     public function testBasics()
     {
         $stream = new JsonStream([]);
-        self::assertSame([], $stream->getJson());
+        self::assertSame([], $stream->getParsedContents());
         self::assertSame(2, $stream->getSize());
         self::assertSame('[]', $stream->getContents());
     }
