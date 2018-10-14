@@ -1,5 +1,6 @@
 {
   "name": "api-clients/middleware-json",
+  "description": "JSON encode/decode middleware",
   "license": "MIT",
   "authors": [
     {
