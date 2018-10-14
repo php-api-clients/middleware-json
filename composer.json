@@ -8,7 +8,7 @@
     }
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.2",
     "api-clients/json": "^1.0",
     "api-clients/middleware": "^4.0",
     "api-clients/transport": "^3.1",
@@ -33,18 +33,18 @@
   "config": {
     "sort-packages": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.2"
     }
   },
   "scripts": {
     "ensure-installed": "composer install --ansi -n -q",
-    "lint-php": [
-      "@ensure-installed",
-      "parallel-lint --exclude vendor ."
-    ],
     "cs": [
       "@ensure-installed",
-      "phpcs --standard=PSR2 src/"
+      "php-cs-fixer fix --config=.php_cs --ansi --dry-run --diff --verbose --allow-risky=yes --show-progress=estimating"
+    ],
+    "cs-fix": [
+      "@ensure-installed",
+      "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
     ],
     "unit": [
       "@ensure-installed",
@@ -53,6 +53,10 @@
     "unit-coverage": [
       "@ensure-installed",
       "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
+    ],
+    "lint-php": [
+      "@ensure-installed",
+      "parallel-lint --exclude vendor ."
     ],
     "qa-all": [
       "@lint-php",
@@ -70,6 +74,9 @@
       "@unit"
     ],
     "qa-ci": [
+      "@unit"
+    ],
+    "qa-ci-extended": [
       "@qa-all-coverage"
     ],
     "qa-ci-windows": [
