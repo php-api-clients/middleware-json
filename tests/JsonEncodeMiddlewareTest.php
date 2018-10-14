@@ -2,8 +2,8 @@
 
 namespace ApiClients\Tests\Middleware\Json;
 
-use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Middleware\Json\JsonEncodeMiddleware;
+use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\Json\JsonEncodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;

@@ -33,8 +33,8 @@ class JsonDecodeMiddleware implements MiddlewareInterface
     }
 
     /**
-     * @param ResponseInterface $response
-     * @param array $options
+     * @param  ResponseInterface           $response
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      *
      * @ThirdLast()
@@ -62,11 +62,13 @@ class JsonDecodeMiddleware implements MiddlewareInterface
         if ($body === '') {
             $stream = new BufferStream(0);
             $stream->write($body);
+
             return resolve($response->withBody($stream));
         }
 
         return $this->jsonDecodeService->decode($body)->then(function ($json) use ($response) {
             $body = new JsonStream($json);
+
             return resolve($response->withBody($body));
         });
     }
