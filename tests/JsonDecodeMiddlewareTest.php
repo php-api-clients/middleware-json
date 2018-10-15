@@ -2,8 +2,8 @@
 
 namespace ApiClients\Tests\Middleware\Json;
 
-use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Middleware\Json\JsonDecodeMiddleware;
+use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Middleware\Json\Options;
 use ApiClients\Tools\Json\JsonDecodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
