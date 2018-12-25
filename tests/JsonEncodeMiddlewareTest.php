@@ -11,9 +11,12 @@ use RingCentral\Psr7\BufferStream;
 use RingCentral\Psr7\Request;
 use function Clue\React\Block\await;
 
+/**
+ * @internal
+ */
 class JsonEncodeMiddlewareTest extends TestCase
 {
-    public function testPre()
+    public function testPre(): void
     {
         $loop = Factory::create();
         $service = new JsonEncodeService($loop);
@@ -30,7 +33,7 @@ class JsonEncodeMiddlewareTest extends TestCase
         self::assertSame('application/json', $modifiedRequest->getHeaderLine('Content-Type'));
     }
 
-    public function testPreNoJson()
+    public function testPreNoJson(): void
     {
         $loop = Factory::create();
         $service = new JsonEncodeService($loop);

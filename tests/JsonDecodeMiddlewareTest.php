@@ -13,6 +13,9 @@ use React\Stream\ThroughStream;
 use RingCentral\Psr7\Response;
 use function Clue\React\Block\await;
 
+/**
+ * @internal
+ */
 class JsonDecodeMiddlewareTest extends TestCase
 {
     public function provideValidJsonContentTypes()
@@ -24,7 +27,7 @@ class JsonDecodeMiddlewareTest extends TestCase
     /**
      * @dataProvider provideValidJsonContentTypes
      */
-    public function testPost(string $contentType)
+    public function testPost(string $contentType): void
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
@@ -44,7 +47,7 @@ class JsonDecodeMiddlewareTest extends TestCase
         );
     }
 
-    public function testPostNoContentType()
+    public function testPostNoContentType(): void
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
@@ -60,7 +63,7 @@ class JsonDecodeMiddlewareTest extends TestCase
         );
     }
 
-    public function testPostNoContentTypeCheck()
+    public function testPostNoContentTypeCheck(): void
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
@@ -88,7 +91,7 @@ class JsonDecodeMiddlewareTest extends TestCase
         );
     }
 
-    public function testPostCustomTYpe()
+    public function testPostCustomTYpe(): void
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
@@ -116,7 +119,7 @@ class JsonDecodeMiddlewareTest extends TestCase
         );
     }
 
-    public function testPostNoJson()
+    public function testPostNoJson(): void
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);
@@ -132,7 +135,7 @@ class JsonDecodeMiddlewareTest extends TestCase
         );
     }
 
-    public function testPostEmpty()
+    public function testPostEmpty(): void
     {
         $loop = Factory::create();
         $service = new JsonDecodeService($loop);

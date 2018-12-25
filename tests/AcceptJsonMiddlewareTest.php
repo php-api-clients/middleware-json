@@ -8,9 +8,12 @@ use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
 use function Clue\React\Block\await;
 
+/**
+ * @internal
+ */
 class AcceptJsonMiddlewareTest extends TestCase
 {
-    public function testPre()
+    public function testPre(): void
     {
         $middleware = new AcceptJsonMiddleware();
         $request = new Request('GET', 'https://example.com', [], '');
