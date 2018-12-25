@@ -21,8 +21,8 @@ class JsonStream implements StreamInterface, ParsedContentsInterface
     public function __construct(array $json)
     {
         $this->json = $json;
-        $jsonString = json_encode($json);
-        $this->bufferStream = new BufferStream(strlen($jsonString));
+        $jsonString = \json_encode($json);
+        $this->bufferStream = new BufferStream(\strlen($jsonString));
         $this->bufferStream->write($jsonString);
     }
 
@@ -44,11 +44,11 @@ class JsonStream implements StreamInterface, ParsedContentsInterface
         return $this->bufferStream->getContents();
     }
 
-    public function close()
+    public function close(): void
     {
     }
 
-    public function detach()
+    public function detach(): void
     {
     }
 
