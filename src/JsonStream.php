@@ -77,7 +77,7 @@ class JsonStream implements StreamInterface, ParsedContentsInterface
         return $this->bufferStream->rewind();
     }
 
-    public function seek($offset, $whence = SEEK_SET)
+    public function seek($offset, $whence = \SEEK_SET)
     {
         return $this->bufferStream->seek($offset, $whence);
     }
