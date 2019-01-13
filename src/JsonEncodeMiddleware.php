@@ -10,8 +10,8 @@ use ApiClients\Foundation\Transport\ParsedContentsInterface;
 use ApiClients\Tools\Json\JsonEncodeService;
 use Psr\Http\Message\RequestInterface;
 use React\Promise\CancellablePromiseInterface;
-use RingCentral\Psr7\BufferStream;
 use function React\Promise\resolve;
+use RingCentral\Psr7\BufferStream;
 
 class JsonEncodeMiddleware implements MiddlewareInterface
 {
