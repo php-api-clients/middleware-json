@@ -4,9 +4,9 @@ namespace ApiClients\Tests\Middleware\Json;
 
 use ApiClients\Middleware\Json\AcceptJsonMiddleware;
 use ApiClients\Tools\TestUtilities\TestCase;
+use function Clue\React\Block\await;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
-use function Clue\React\Block\await;
 
 /**
  * @internal

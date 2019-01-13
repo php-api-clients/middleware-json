@@ -10,8 +10,8 @@ use ApiClients\Tools\Json\JsonDecodeService;
 use GuzzleHttp\Psr7\BufferStream;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
-use React\Stream\ReadableStreamInterface;
 use function React\Promise\resolve;
+use React\Stream\ReadableStreamInterface;
 
 class JsonDecodeMiddleware implements MiddlewareInterface
 {

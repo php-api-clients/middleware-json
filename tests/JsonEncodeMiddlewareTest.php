@@ -6,10 +6,10 @@ use ApiClients\Middleware\Json\JsonEncodeMiddleware;
 use ApiClients\Middleware\Json\JsonStream;
 use ApiClients\Tools\Json\JsonEncodeService;
 use ApiClients\Tools\TestUtilities\TestCase;
+use function Clue\React\Block\await;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\BufferStream;
 use RingCentral\Psr7\Request;
-use function Clue\React\Block\await;
 
 /**
  * @internal
